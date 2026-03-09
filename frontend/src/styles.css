@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-primary: #FFFBF5;
+  --bg-secondary: #FFF5E6;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --text-primary: #2D2A26;
+  --text-secondary: #6B6560;
+  --text-muted: #9B958F;
+  --accent-primary: #FF6B35;
+  --accent-secondary: #4ECDC4;
+  --accent-tertiary: #A78BFA;
+  --agent-kira: #FF6B35;
+  --agent-heng: #4ECDC4;
+  --agent-ha: #A78BFA;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: linear-gradient(135deg, #FFFBF5 0%, #FFE8D6 50%, #FFD6BA 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 107, 53, 0); }
+}
+
+.agent-avatar-pulse {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+#root {
+  min-height: 100vh;
+}
